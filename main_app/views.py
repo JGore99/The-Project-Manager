@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Project
 
 
@@ -15,3 +16,15 @@ def projects_index(request):
 def projects_detail(request, project_id):
   project = Project.objects.get(id=project_id)
   return render(request, 'projects/detail.html', { 'project': project })
+
+class ProjectCreate(CreateView):
+  model = Project
+  fields = '__all__'
+
+class ProjectUpdate(UpdateView):
+  model = Project
+  fields = '__all__'
+
+class ProjectDelete(DeleteView):
+  model = Project
+  success_url = '/projects/'

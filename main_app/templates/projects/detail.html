@@ -13,10 +13,6 @@
 
 <section class="cat-container">
   <div class="cat-img">
-    <img 
-      src="{% static 'images/sk8r-boi-cat.svg' %}" 
-      alt="A skater boy cat"
-    >
   </div>
   <div class="cat-details">
     <h1>{{ cat.name }}</h1>
@@ -26,6 +22,12 @@
       <h2>A {{ cat.breed }} kitten.</h2>
     {% endif %}
     <p>{{ cat.description }}</p>
+    {% comment %} New markup {% endcomment %}
+    <div class="cat-actions">
+      <a href="{% url 'cats_update' cat.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'cats_delete' cat.id %}" class="btn danger">Delete</a>
+    </div>
+    {% comment %} New markup above {% endcomment %}
   </div>
 </section>
 
