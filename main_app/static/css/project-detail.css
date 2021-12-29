@@ -1,4 +1,4 @@
-.cat-container {
+.project-container {
   padding: 35px 30px;
   display: flex;
   flex-direction: column;
@@ -6,25 +6,20 @@
   justify-content: center;
 }
 
-.cat-img {
-  width: 75%;
-  max-width: 350px;
-}
-
 .usr-img {
   width: 100%;
   border-radius: var(--card-border-radius);
 }
 
-.cat-details {
+.project-details {
   width: 98%;
 }
 
-.cat-actions {
+.project-actions {
   margin-top: 20px;
 }
 
-.feedings-toy-container {
+.tasks-toy-container {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
@@ -72,29 +67,29 @@
   color: var(--submit);
 }
 
-.cat-details h1 {
+.project-details h1 {
   font-size: var(--font-xxl);
   margin: 15px 0 3px;
 }
 
-.cat-details h2 {
+.project-details h2 {
   font-size: var(--font-xl);
   margin: 0 0 10px;
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-.cat-details h3 {
+.project-details h3 {
   margin: 20px 0 10px;
   font-size: var(--font-l);
 }
 
-.cat-details p {
+.project-details p {
   font-size: var(--font-reg);
   margin: 5px 0;
 }
 
-.feedings-toy-container > section {
+.tasks-container > section {
   width: 80%;
   min-width: 360px;
   border: var(--borders);
@@ -116,13 +111,13 @@
   margin-left: 16px;
 }
 
-.feedings h2,
+.tasks h2,
 .toys h2 {
   font-size: 3.2rem;
   margin: 0;
 }
 
-.feedings h3,
+.tasks h3,
 .toys h3 {
   font-size: var(--font-xl);
   margin: 10px 0;
@@ -140,25 +135,25 @@
   padding: 3px;
 }
 
-.feedings table {
+.tasks table {
   width: calc(100% - 16px);
   text-align: left;
   border-collapse: collapse;
   margin: 0 8px;
 }
 
-.feedings td {
+.tasks td {
   padding: 8px 5px;
   font-size: var(--font-reg);
 }
 
-.feedings th {
+.tasks th {
   font-size: var(--font-l);
   padding: 5px 5px 0;
   border-bottom: rgb(36, 116, 248) solid 2px;
 }
 
-.feedings tr:nth-child(even) {
+.tasks tr:nth-child(even) {
   background-color: #f3f3fd;
 }
 
@@ -188,32 +183,32 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .cat-container {
+  .project-container {
     padding: 35px 30px;
     flex-direction: row;
     align-items: center;
     justify-content: start;
   }
 
-  .cat-img {
+  .project-img {
     width: 25%;
     max-width: 250px;
     margin-right: 25px;
   }
 
-  .feedings-toy-container {
+  .tasks-toy-container {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
   }
 
-  .feedings-toy-container > section {
+  .tasks-toy-container > section {
     width: 45%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .feedings-toy-container {
+  .tasks-toy-container {
     padding: 0 40px;
   }
 }

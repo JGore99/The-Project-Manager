@@ -2,11 +2,13 @@
   padding: 0 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
 .card {
-  width: 275px;
+  width: 350px;
   margin: 10px;
   border: var(--borders);
   box-shadow: var(--card-box-shadow);

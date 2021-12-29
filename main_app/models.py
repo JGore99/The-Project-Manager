@@ -1,12 +1,38 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
+
+PRIORITIES = (
+  ('L', 'Low'),
+  ('M', 'Medium'),
+  ('H', 'High'),
+  ('I', 'Immediate')
+)
 
 class Project(models.Model):
   name = models.CharField(max_length=100)
+  # due_date = models.DateField('Due date')
   description = models.TextField(max_length=300)
 
 def __str__(self):
     return self.name
+    # return self.name, f"{self.get_date_display()} on {self.date}"
 
 def get_absolute_url(self):
     return reverse('projects_detail', kwargs={'project_id': self.id})
+
+class Tasks(models.Model):
+  date = models.DateField()
+  priority = models.CharField(
+  max_length=1,
+  choices=PRIORITIES,
+  default=PRIORITIES[0][0]
+  )
+
+  project = models.ForeignKey(Project, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.get_task_display()} on {self.date}"
+
+  class Meta:
+    ordering = ['-date']

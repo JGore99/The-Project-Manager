@@ -2,33 +2,84 @@
 {% load static %}
 
 {% block head %}
+<script 
+  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
+>
+</script>
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{% static 'css/cat-detail.css' %}"
+  href="{% static 'css/project-detail.css' %}"
 />
+<script defer src="{% static 'js/project-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 
-<section class="cat-container">
-  <div class="cat-img">
+<section class="project-container">
+  <div class="project-img">
   </div>
-  <div class="cat-details">
-    <h1>{{ cat.name }}</h1>
-    {% if cat.age > 0 %}
-      <h2>A {{ cat.age }} year old {{ cat.breed }}</h2>
+  <div class="project-details">
+    <h1>{{ project.name }}</h1>
+    {% if project.age > 0 %}
+      <h2>A {{ project.age }} year old {{ project.breed }}</h2>
     {% else %}
-      <h2>A {{ cat.breed }} kitten.</h2>
+      <h2>A {{ project.breed }} kitten.</h2>
     {% endif %}
-    <p>{{ cat.description }}</p>
+    <p>{{ project.description }}</p>
     {% comment %} New markup {% endcomment %}
-    <div class="cat-actions">
-      <a href="{% url 'cats_update' cat.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'cats_delete' cat.id %}" class="btn danger">Delete</a>
+    <div class="project-actions">
+      <a href="{% url 'projects_update' project.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'projects_delete' project.id %}" class="btn danger">Delete</a>
     </div>
     {% comment %} New markup above {% endcomment %}
   </div>
 </section>
-
+<div class="task-container">
+  <section class="tasks">
+    <div class="subsection-title">
+      <h2>Tasks</h2>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Meal</th></tr>
+      </thead>
+      <tbody>
+        {% for task in project.task_set.all %}
+          <tr>
+            <td>{{task.date}}</td>
+            <td>{{task.get_task_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+<h3>Add a Task</h3>
+    <form
+      method="post" 
+      class="subsection-content"
+    >
+      {% csrf_token %}
+      {{ task_form.as_p }}
+      <button type="submit" class="btn submit">Add Task</button>
+    </form>
+    <h3>Current tasks</h3>
+    {% if cat.task_set.all.count %}
+    <table>
+      <thead>
+        <tr><th>Date</th><th>Meal</th></tr>
+      </thead>
+      <tbody>
+        {% for task in cat.task_set.all %}
+          <tr>
+            <td>{{task.date}}</td>
+            <td>{{task.get_date_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <h3 class="subsection-content">{{project.name}} has no tasks</h3>
+    {% endif %}
 {% endblock %}

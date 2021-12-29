@@ -16,11 +16,9 @@
     <div class="card">
       <a href="{% url 'projects_detail' project.id %}">
         <div class="card-content">
-          <div class="card-img-container">
-            
-          </div>
           <h2 class="card-title">{{ project.name }}</h2>
           <p><small>{{ project.description }}</small></p>
+          <p><small>{{ project.due_date }}</small></p>
         </div>
       </a>  
     </div>
