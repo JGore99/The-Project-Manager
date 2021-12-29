@@ -18,6 +18,8 @@ html {
 }
 
 body {
+  background: rgb(97, 96, 96);
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0.523) 10%, rgba(216,214,214,0.4556197478991597) 54%);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -26,18 +28,20 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   min-height: 100vh;
+  --card-color: rgb(62,62,62);
+  --card-gradient: linear-gradient(180deg, rgba(110, 110, 110, 0.523) 0%, rgba(216,214,214,0.4556197478991597) 54%);
   --nav-bg: rgba(104, 197, 248, .7);
   --nav-bg-ff: rgba(104, 197, 248, .9);
-  --borders: rgb(36, 116, 248) solid 2px;
+  --borders: rgb(22, 82, 179) solid 2px;
   --text-color: rgb(17, 20, 17);
-  --link-hover-color: rgb(16, 56, 158);
+  --link-hover-color: rgb(27, 48, 102);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
   --submit: rgb(26, 128, 0);
   --warn: rgb(255, 102, 0);
   --danger: rgb(220, 20, 30);
   --secondary: rgb(57, 57, 57);
-  --card-box-shadow: 5px 5px 6px -1px #AAA;
+  --card-box-shadow: 5px 5px 6px -1px rgb(141, 141, 141);
   --font-xtreme: 4.2rem;
   --font-xxl: 3.6rem;
   --font-xl: 2.4rem;
