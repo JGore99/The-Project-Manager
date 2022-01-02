@@ -37,8 +37,8 @@ def add_task(request, project_id):
 
 class ProjectCreate(LoginRequiredMixin, CreateView):
   model = Project
-  fields = '__all__'
-  # success_url = '/projects/'
+  fields = ['name', 'description']
+  success_url = '/projects/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user
@@ -46,7 +46,8 @@ class ProjectCreate(LoginRequiredMixin, CreateView):
 
 class ProjectUpdate(UpdateView):
   model = Project
-  fields = '__all__'
+  fields = ['name', 'description']
+  success_url = '/projects/'
 
 class ProjectDelete(DeleteView):
   model = Project
