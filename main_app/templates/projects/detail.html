@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block head %}
-<script 
+{% comment %} <script 
   src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
->
+> {% endcomment %}
 </script>
 <link 
   rel="stylesheet" 
@@ -52,8 +52,10 @@
 </div>
 <h3>Add a Task</h3>
     <form
-      method="post" 
-      class="subsection-content"
+    action="{% url 'add_task' project.id %}"
+    method='post'
+    class='subsection-content'
+    autocomplete='off'
     >
       {% csrf_token %}
       {{ task_form.as_p }}

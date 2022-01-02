@@ -25,7 +25,7 @@ def add_task(request, project_id):
     new_task = form.save(commit=False)
     new_task.project_id = project_id
     new_task.save()
-  return redirect('cats_detail', project_id=project_id)
+  return redirect('projects_detail', project_id=project_id)
 
 class ProjectCreate(CreateView):
   model = Project
