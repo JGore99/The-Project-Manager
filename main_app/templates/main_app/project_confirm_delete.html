@@ -4,15 +4,14 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Delete Cat?</h1>
-  <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer"/>
+  <h1>Delete Project?</h1>
 </div>
 <h2>Are you sure you want to delete {{ object.name }}?</h2>
 
 <form action="" method="POST" class="form">
   {% csrf_token %}
   <a 
-    href="{% url 'cats_detail' cat.id %}" 
+    href="{% url 'projects_detail' project.id %}" 
     class="btn secondary"
   >
     Cancel

@@ -21,11 +21,6 @@
   </div>
   <div class="project-details">
     <h1>{{ project.name }}</h1>
-    {% if project.age > 0 %}
-      <h2>A {{ project.age }} year old {{ project.breed }}</h2>
-    {% else %}
-      <h2>A {{ project.breed }} kitten.</h2>
-    {% endif %}
     <p>{{ project.description }}</p>
     {% comment %} New markup {% endcomment %}
     <div class="project-actions">
@@ -40,7 +35,7 @@
     <div class="subsection-title">
       <h2>Tasks</h2>
     </div>
-    <table>
+    {% comment %} <table>
       <thead>
         <tr><th>Date</th><th>Meal</th></tr>
       </thead>
@@ -52,7 +47,7 @@
           </tr>
         {% endfor %}
       </tbody>
-    </table>
+    </table> {% endcomment %}
   </section>
 </div>
 <h3>Add a Task</h3>
@@ -65,16 +60,16 @@
       <button type="submit" class="btn submit">Add Task</button>
     </form>
     <h3>Current tasks</h3>
-    {% if cat.task_set.all.count %}
+    {% if project.task_set.all.count %}
     <table>
       <thead>
-        <tr><th>Date</th><th>Meal</th></tr>
+        <tr><th>Details</th><th>Priority</th></tr>
       </thead>
       <tbody>
-        {% for task in cat.task_set.all %}
+        {% for task in project.task_set.all %}
           <tr>
-            <td>{{task.date}}</td>
-            <td>{{task.get_date_display}}</td>
+            <td>{{task.details}}</td>
+            {% comment %} <td>{{task.get_date_display}}</td> {% endcomment %}
           </tr>
         {% endfor %}
       </tbody>
