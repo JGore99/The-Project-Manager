@@ -71,6 +71,9 @@
         {% for task in project.task_set.all %}
           <tr>
             <td>{{task.details}}</td>
+            <td>{{task.priority}}</td>
+            <td><input type="checkbox" id="accept"> Completed </td>
+            
             {% comment %} <td>{{task.get_date_display}}</td> {% endcomment %}
           </tr>
         {% endfor %}
