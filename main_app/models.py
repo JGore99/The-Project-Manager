@@ -16,12 +16,11 @@ class Project(models.Model):
   description = models.TextField(max_length=300)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-def __str__(self):
-    return self.name
-    # return self.name, f"{self.get_date_display()} on {self.date}"
+  def __str__(self):
+      return self.name
 
-def get_absolute_url(self):
-    return reverse('projects_detail', kwargs={'project_id': self.id})
+  def get_absolute_url(self):
+      return reverse('projects_detail', kwargs={'project_id': self.id})
 
 class Task(models.Model):
   details = models.TextField(max_length=300)
