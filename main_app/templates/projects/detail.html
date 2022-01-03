@@ -17,17 +17,13 @@
 {% block content %}
 
 <section class="project-container">
-  <div class="project-img">
-  </div>
   <div class="project-details">
     <h1>{{ project.name }}</h1>
-    <p>{{ project.description }}</p>
-    {% comment %} New markup {% endcomment %}
+    <p>Description: {{ project.description }}</p>
     <div class="project-actions">
       <a href="{% url 'projects_update' project.id %}" class="btn warn">Edit</a>
       <a href="{% url 'projects_delete' project.id %}" class="btn danger">Delete</a>
     </div>
-    {% comment %} New markup above {% endcomment %}
   </div>
 </section>
 <div class="task-container">

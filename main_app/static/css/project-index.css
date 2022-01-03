@@ -9,13 +9,11 @@
 
 .card {
   background: var(--card-color);
-  background: var(--card-gradient);
+  /* background: var(--card-gradient); */
   width: 400px;
   margin: 8px;
-  border-bottom: var(--borders);
-  border-left: var(--borders);
-  border-right: var(--borders);
-  box-shadow: var(--card-box-shadow);
+  border: var(--borders);
+  /* box-shadow: var(--card-box-shadow); */
 }
 
 .card-content {

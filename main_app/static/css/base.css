@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  background: rgb(97, 96, 96);
-  background: linear-gradient(180deg, rgba(102, 102, 102, 0.523) 10%, rgba(216,214,214,0.4556197478991597) 54%);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 80%, rgba(8, 8, 8, 0.8) 100%);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -27,21 +27,22 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  color: var(--text-color);
   min-height: 100vh;
-  --card-color: rgb(62,62,62);
+  --card-color: rgb(14, 14, 14);
   --card-gradient: linear-gradient(180deg, rgba(110, 110, 110, 0.523) 0%, rgba(216,214,214,0.4556197478991597) 54%);
-  --nav-bg: rgba(104, 197, 248, .7);
-  --nav-bg-ff: rgba(104, 197, 248, .9);
-  --borders: rgb(31, 63, 116) solid 1px;
-  --text-color: rgb(17, 20, 17);
-  --link-hover-color: rgb(27, 48, 102);
-  --button-bg: rgb(245, 245, 245);
-  --button-bg-hover: rgb(226, 226, 226);
-  --submit: rgb(26, 128, 0);
-  --warn: rgb(255, 102, 0);
-  --danger: rgb(220, 20, 30);
+  --nav-bg: rgba(8, 8, 8, 0.8);
+  --nav-bg-ff: rgba(8, 8, 8, 0.8);
+  --borders: rgb(51, 72, 141) solid 1px;
+  --text-color: rgb(212, 212, 212);
+  --link-hover-color: rgb(139, 169, 190);
+  --button-bg: rgb(8, 8, 8, 0.8);
+  --button-bg-hover: rgb(95, 95, 95);
+  --submit: rgb(103, 184, 83);
+  --warn: rgb(83, 147, 184);
+  --danger: rgb(226, 71, 71);
   --secondary: rgb(57, 57, 57);
-  --card-box-shadow: 5px 5px 6px -1px rgb(141, 141, 141);
+  --card-box-shadow: 5px 5px 6px -1px rgb(39, 39, 39);
   --font-xtreme: 4.2rem;
   --font-xxl: 3.6rem;
   --font-xl: 2.4rem;
@@ -50,6 +51,7 @@ body {
   --font-m: 1.5rem;
   --font-sm: 1.4rem;
   --card-border-radius: 6px;
+  --letter-spacing-m: 0.5px;
 }
 
 header {
@@ -75,12 +77,13 @@ main {
 nav a {
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: var(--font-reg);
+  letter-spacing: var(--letter-spacing-m);
 }
 
 nav a:hover {
-  color: var(--link-hover-color)
+  color: var(--link-hover-color);
 }
 
 nav ul {
@@ -91,13 +94,18 @@ nav ul {
 }
 
 nav li {
-  padding: 5px 8px;
+  padding: 5px 10px;
 }
 
 .header-title-container {
   margin: auto;
-  padding: 10px 20px 0;
+  color: var(--text-color);
+  /* padding: 10px 20px 0; */
   max-width: 500px;
+}
+
+.header-title {
+  text-align: center;
 }
 
 .page-header {
@@ -106,15 +114,22 @@ nav li {
   margin: 20px;
 }
 
+h2 {
+  font-size: var(--font-m);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-m);
+}
+
 .btn {
   font-size: var(--font-m);
-  padding: 8px 16px;
+  padding: 5px 10px;
   border-radius: 6px;
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   text-decoration: none;
   background-color: var(--button-bg);
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-m);
   cursor: pointer;
   font-family: inherit;
   margin-right: 10px;
@@ -156,6 +171,7 @@ nav li {
     flex-direction: row;
     top: 0;
     align-items: center;
+    justify-content: center;
   }
 
   main {
@@ -165,8 +181,9 @@ nav li {
 
   nav,
   .header-title-container {
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 0 15px;
+    
   }
 
   /* visual fix to help align logo */
@@ -215,7 +232,7 @@ nav li {
     min-height: calc(100vh - 55px);
   }
   
-  header {
+  /* header {
     margin: 20px 20px 0 20px;
     width: calc(100vw - 40px);
     max-width: 1920px;
@@ -229,7 +246,7 @@ nav li {
     margin: 0;
     background: var(--nav-bg-ff);
     border: var(--borders);
-    border-radius: 10px;
+    border-radius: 6px;
   }
 
   nav {
@@ -237,13 +254,10 @@ nav li {
   }
 
   .header-title-container {
-    /* visual fix to help align logo */
-    /* padding-top: 6px; */
     width: 256px;
-    height: 35px;
-    /* line-height: 35px; */
+    height: 30px;
     text-align: center;
-  }
+  } */
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     header {
@@ -253,9 +267,15 @@ nav li {
 
     nav,
     .header-title-container {
-      background: rgba(104, 197, 248, .6);
+      /* background: rgba(104, 197, 248, .6); */
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
+    }
+
+    .header-title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

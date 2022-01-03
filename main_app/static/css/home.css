@@ -25,10 +25,17 @@ main > section {
 
 .logo-container {
   max-width: 450px;
+  align-content: center;
+  justify-content: flex-start;
+  padding-top: 50px;
 }
 
-.cat-container {
+.project-container {
   width: 80%;
+}
+
+.greeting{
+  text-align: center;
 }
 
 .login {
