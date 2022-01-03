@@ -5,7 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Project
+from .models import Project, Task
 from .forms import TaskForm
 
 
@@ -35,21 +35,24 @@ def add_task(request, project_id):
     new_task.save()
   return redirect('projects_detail', project_id=project_id)
 
+# I know this is wrong. THis is me trying to fumble through it.
+# def update_task(request, task_id):
+#   model = Task(request.POST)
+#   fields = ['details', 'priority']
+
 class ProjectCreate(LoginRequiredMixin, CreateView):
   model = Project
   fields = ['name', 'description']
-  # success_url = '/projects/'
 
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class ProjectUpdate(UpdateView):
+class ProjectUpdate(LoginRequiredMixin, UpdateView):
   model = Project
   fields = ['name', 'description']
-  # success_url = '/projects/'
 
-class ProjectDelete(DeleteView):
+class ProjectDelete(LoginRequiredMixin, DeleteView):
   model = Project
   success_url = '/projects/'
 

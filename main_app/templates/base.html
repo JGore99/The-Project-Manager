@@ -17,12 +17,13 @@
 </head>
 <body>
   <header>
-    <div class="header-logo-container">
-      <h2>Welcome {{ user.username }}!</h2>
+    <div class="header-title-container">
+      <h2>The Project Manager</h2>
     </div>
     <nav>
       <ul>
         {% if user.is_authenticated %}
+          <li><a href="/">Hello {{ user.username }}</a></li>
           <li><a href="/projects">Projects</a></li>
           <li><a href="{% url 'projects_create' %}">Add a Project</a></li>
           <li><a href="/about">About</a></li>

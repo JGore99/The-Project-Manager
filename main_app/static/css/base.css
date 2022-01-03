@@ -32,7 +32,7 @@ body {
   --card-gradient: linear-gradient(180deg, rgba(110, 110, 110, 0.523) 0%, rgba(216,214,214,0.4556197478991597) 54%);
   --nav-bg: rgba(104, 197, 248, .7);
   --nav-bg-ff: rgba(104, 197, 248, .9);
-  --borders: rgb(22, 82, 179) solid 2px;
+  --borders: rgb(31, 63, 116) solid 1px;
   --text-color: rgb(17, 20, 17);
   --link-hover-color: rgb(27, 48, 102);
   --button-bg: rgb(245, 245, 245);
@@ -47,7 +47,8 @@ body {
   --font-xl: 2.4rem;
   --font-l: 1.8rem;
   --font-reg: 1.6rem;
-  --font-sm: 1.5rem;
+  --font-m: 1.5rem;
+  --font-sm: 1.4rem;
   --card-border-radius: 6px;
 }
 
@@ -93,7 +94,7 @@ nav li {
   padding: 5px 8px;
 }
 
-.header-logo-container {
+.header-title-container {
   margin: auto;
   padding: 10px 20px 0;
   max-width: 500px;
@@ -106,7 +107,7 @@ nav li {
 }
 
 .btn {
-  font-size: var(--font-l);
+  font-size: var(--font-m);
   padding: 8px 16px;
   border-radius: 6px;
   border-width: 2px;
@@ -148,15 +149,6 @@ nav li {
   margin: 0;
 }
 
-.page-header img {
-  height: 40px;
-  margin-left:15px;
-}
-
-.page-header img:first-of-type {
-  margin-left: 20px;
-}
-
 @media only screen and (min-width: 768px) {
   header {
     position: sticky;
@@ -172,13 +164,13 @@ nav li {
   }
 
   nav,
-  .header-logo-container {
+  .header-title-container {
     margin: 10px 0;
     padding: 0 15px;
   }
 
   /* visual fix to help align logo */
-  .header-logo-container {
+  .header-title-container {
     padding-top: 3px;
   }
 
@@ -233,22 +225,24 @@ nav li {
   }
 
   nav,
-  .header-logo-container {
+  .header-title-container {
     margin: 0;
     background: var(--nav-bg-ff);
     border: var(--borders);
-    border-radius: 18px;
+    border-radius: 10px;
   }
 
   nav {
     margin-left: auto;
   }
 
-  .header-logo-container {
+  .header-title-container {
     /* visual fix to help align logo */
-    padding-top: 6px;
+    /* padding-top: 6px; */
     width: 256px;
     height: 35px;
+    /* line-height: 35px; */
+    text-align: center;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -258,7 +252,7 @@ nav li {
     }
 
     nav,
-    .header-logo-container {
+    .header-title-container {
       background: rgba(104, 197, 248, .6);
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
