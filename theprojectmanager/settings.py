@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'theprojectmanager.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql',
-		'NAME': 'catcollector',
+		'NAME': 'projectmanager',
 	}
 }
 
