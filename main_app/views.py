@@ -12,8 +12,8 @@ from .forms import TaskForm
 class Home(LoginView):
   template_name = 'home.html'
 
-def about(request):
-  return render(request, 'about.html')
+# def about(request):
+#   return render(request, 'about.html')
 
 @login_required
 def projects_index(request):

@@ -37,6 +37,7 @@
 .add-task-container {
   display: flex;
   flex-direction: column;
+  padding-bottom: 10px;
 }
 
 .subsection-title {
@@ -168,7 +169,6 @@
 
 .task-container .btn {
   padding: 3px 10px;
-  margin-left: 100px;
 }
 
 #file-input {

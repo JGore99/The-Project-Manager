@@ -24,18 +24,21 @@ main > section {
 }
 
 .logo-container {
-  max-width: 450px;
+  max-width: 500px;
   align-content: center;
   justify-content: flex-start;
   padding-top: 50px;
 }
 
 .project-container {
-  width: 80%;
+  width: 100%;
 }
 
-.greeting{
+.greeting {
+  font-size: var(--font-xl);
+  letter-spacing: var(--letter-spacing-l);
   text-align: center;
+  margin: none;
 }
 
 .login {

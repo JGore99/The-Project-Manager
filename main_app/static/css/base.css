@@ -52,6 +52,7 @@ body {
   --font-sm: 1.4rem;
   --card-border-radius: 6px;
   --letter-spacing-m: 0.5px;
+  --letter-spacing-l: 0.8px;
 }
 
 header {
@@ -133,6 +134,16 @@ h2 {
   cursor: pointer;
   font-family: inherit;
   margin-right: 10px;
+}
+
+input, textarea {
+  background-color: var(--text-color);
+  border: var(--borders);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border: rgb(103, 184, 83) solid 2px;
 }
 
 .btn:hover {
