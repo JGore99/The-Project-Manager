@@ -78,26 +78,33 @@ main > section {
 
 @media only screen and (min-width: 768px) {
   main {
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   main > section {
     width: 40%;
-    min-height: calc(100vh - 50px);
+    /* min-height: calc(100vh - 400px); */
+  }
+
+  .login-container {
+    height: 300px;
   }
 
   .login {
-    border: rgb(36, 116, 248) solid 2px;
+    border: rgb(51, 72, 141) solid 1px;
     padding: 20px;
     border-radius: 6px;
+    background-color: rgba(8, 8, 8, 0.8);
   }
 
   .logo-container {
+    height: 150px;
     max-width: 520px;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+/* @media only screen and (min-width: 1024px) {
   nav {
     margin-top: 0;
   }
@@ -106,4 +113,4 @@ main > section {
     padding: 0 5px;
     min-height: calc(100vh - 57.6px);
   }
-}
+} */
