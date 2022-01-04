@@ -15,7 +15,7 @@ To build a full CRUD application using Django, Python, and a Sequel Db that effe
 ## Getting Started:
 
 To view the site, 
-[click here.] DEPLOY LINK HERE
+[click here.](https://the-project-manager-01.herokuapp.com/)
 
 <p>&nbsp;</p>
 
@@ -27,43 +27,43 @@ I want to build a tool that I can personally use to help me when designing and b
 
 ## Wireframe:
 
-REPLACE!!!!!
-![wireframe](https://i.imgur.com/DJOjp16.png "Wireframe")
+![wireframe](https://i.imgur.com/3Ada25N.png "Wireframe")
 
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ## Actual Site:
-REPLACE!!!!
-![actual site](https://i.imgur.com/am2IJmA.png "I've got that on vinyl!")
-REPLACE!!!!
-![actual site](https://i.imgur.com/YJ7LXZ8.png "I've got that on vinyl!")
+
+![actual site](https://i.imgur.com/KJ6dAy4.png "The Project Manager Project Page")
+<p>&nbsp;</p>
+
+![actual site](https://i.imgur.com/UJnQClB.png "The Project Manager Project Detail Page")
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ## Minimum Viable Product:
 
-1. A site that can be logged into using Django and AWS
+1. A full-stack Django application
    
-2. Access to content and features once the user is logged in
-   
-3. The ability create and save projects
-   
-4. The ability to edit projects.
-   
-5. The ability to see specific tasks relating to a project.
-   
-6. The ability to add, edit, and delete specific tasks relating to a project.
-   
-7. The ability to mark projects as complete.
+2. A minimum of one working model in addition to the User model.
 
-8. The ability to edit and delete projects.
+3. A working connection to and the ability to perform data operations on a PostgreSQL database.
 
-
+4. An application that has the ability to perform 3 of the 4 CRUD data operations.
+   
+5. Users should be able to Authenticate users using Django’s built-in authentication.
+   
+6. User's access to create, updating and delete are limited using @login_required, and LoginRequiredMixin.
+   
+7. The application needs to be deployed online.
+     
+8. Users should be able to view, add, edit and delete projects.
+   
+9 Users should be able to view and add tasks relating to a specific project.
+   
+10. Users should be able to mark tasks as complete.
 
 <p>&nbsp;</p>
-
 
 ## Technology Used:
 
@@ -73,10 +73,13 @@ REPLACE!!!!
 * Git
 * Django
 * Sequel
-* AWS
 
 <p>&nbsp;</p>
 
 ## Stretch Goals:
 
-* TBD
+1. Users should be able to add due dates to projects, and tasks.
+   
+2. Users should be able to edit and delete tasks.
+   
+3. When a user checks off something as completed, the display of that item should change.
