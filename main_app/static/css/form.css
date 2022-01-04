@@ -1,7 +1,10 @@
 .form-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  border: white solid 1px;
 }
 
 table {

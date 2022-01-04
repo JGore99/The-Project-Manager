@@ -26,56 +26,42 @@
     </div>
   </div>
 </section>
-<div class="task-container">
-  <section class="tasks">
-    <div class="subsection-title">
-      <h2>Tasks</h2>
-    </div>
-    {% comment %} <table>
-      <thead>
-        <tr><th>Date</th><th>Meal</th></tr>
-      </thead>
-      <tbody>
-        {% for task in project.task_set.all %}
-          <tr>
-            <td>{{task.date}}</td>
-            <td>{{task.get_task_display}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table> {% endcomment %}
+<section class="task-container">
+  <div class="task-details">
+    <div class="add-task-container">
+      <h3>Add a Task</h3>
+        <form
+        action="{% url 'add_task' project.id %}"
+        method='post'
+        class='subsection-content'
+        autocomplete='off'
+        >
+        {% csrf_token %}
+        {{ task_form.as_p }}
+        <button type="submit" class="btn submit">Add Task</button>
+      </div>
+      </form>
+      <h3>Current tasks</h3>
+      {% if project.task_set.all.count %}
+      <table>
+        <thead>
+          <tr><th>Details</th><th>Priority</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          {% for task in project.task_set.all %}
+            <tr>
+              <td>{{task.details}}</td>
+              <td>{{task.priority}}</td>
+              <td><input type="checkbox" id="accept"> Completed</td>
+              
+              {% comment %} <td>{{task.get_date_display}}</td> {% endcomment %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <h3 class="subsection-content">{{project.name}} has no tasks</h3>
+      {% endif %}
+  </div>
   </section>
-</div>
-<h3>Add a Task</h3>
-    <form
-    action="{% url 'add_task' project.id %}"
-    method='post'
-    class='subsection-content'
-    autocomplete='off'
-    >
-      {% csrf_token %}
-      {{ task_form.as_p }}
-      <button type="submit" class="btn submit">Add Task</button>
-    </form>
-    <h3>Current tasks</h3>
-    {% if project.task_set.all.count %}
-    <table>
-      <thead>
-        <tr><th>Details</th><th>Priority</th></tr>
-      </thead>
-      <tbody>
-        {% for task in project.task_set.all %}
-          <tr>
-            <td>{{task.details}}</td>
-            <td>{{task.priority}}</td>
-            <td><input type="checkbox" id="accept"> Completed </td>
-            
-            {% comment %} <td>{{task.get_date_display}}</td> {% endcomment %}
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% else %}
-    <h3 class="subsection-content">{{project.name}} has no tasks</h3>
-    {% endif %}
 {% endblock %}

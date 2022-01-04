@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
 }
 
 .project-details {
@@ -19,11 +18,25 @@
   margin-top: 20px;
 }
 
-.tasks-container {
+.task-container {
+  padding: 10px 30px 20px 30px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 98%;
+}
+
+.add-task-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .subsection-title {
@@ -47,24 +60,6 @@
   height: 25px;
   width: 25px;
   margin-right: 10px;
-}
-
-.unfed,
-.fed,
-.no-toys,
-.all-toys {
-  margin: 0;
-  font-weight: bold;
-}
-
-.unfed,
-.no-toys {
-  color: var(--danger);
-}
-
-.fed,
-.all-toys {
-  color: var(--submit);
 }
 
 .project-details h1 {
@@ -111,22 +106,27 @@
   margin-left: 16px;
 }
 
-.tasks h2,
-.toys h2 {
+.tasks h2 {
   font-size: 3.2rem;
   margin: 0;
 }
 
-.tasks h3,
-.toys h3 {
+.tasks h3 {
   font-size: var(--font-xl);
   margin: 10px 0;
+}
+
+.subsection-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .subsection-content p,
 .subsection-content input,
 .subsection-content select {
-  font-size: var(--font-l);
+  font-size: var(--font-m);
 }
 
 .subsection-content input,
@@ -135,40 +135,40 @@
   padding: 3px;
 }
 
-.tasks table {
+.task-container table {
   width: calc(100% - 16px);
   text-align: left;
   border-collapse: collapse;
   margin: 0 8px;
 }
 
-.tasks td {
+.task-container td {
   padding: 8px 5px;
   font-size: var(--font-reg);
 }
 
-.tasks th {
+.task-container th {
   font-size: var(--font-l);
   padding: 5px 5px 0;
-  border-bottom: rgb(36, 116, 248) solid 2px;
+  border-bottom: rgb(51, 72, 141) solid 1px;
 }
 
-.tasks tr:nth-child(even) {
+.task tr:nth-child(even) {
   background-color: #f3f3fd;
 }
 
-.toy-container p {
+.task-container p {
   margin: 12px 0;
 }
 
-.toy-container a {
+.task-container a {
   text-decoration: none;
   color: #111;
 }
 
-.toy-container .btn {
+.task-container .btn {
   padding: 3px 10px;
-  margin-left: 10px;
+  margin-left: 100px;
 }
 
 #file-input {
@@ -196,7 +196,7 @@
     margin-right: 25px;
   }
 
-  .tasks-container {
+  .task-container {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
