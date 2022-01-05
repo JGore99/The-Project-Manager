@@ -59,7 +59,7 @@ I want to build a tool that I can personally use to help me when designing and b
      
 8. Users should be able to view, add, edit and delete projects.
    
-9 Users should be able to view and add tasks relating to a specific project.
+9. Users should be able to view and add tasks relating to a specific project.
    
 10. Users should be able to mark tasks as complete.
 
