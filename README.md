@@ -2,7 +2,7 @@
 
 ## Description:
 
-A project management application, designed to help user tract multiple projects from conception to competition.
+A project management application, designed to help users tract multiple projects from conception to competition.
 
 <p>&nbsp;</p>
 
